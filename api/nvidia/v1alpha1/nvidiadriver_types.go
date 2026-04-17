@@ -278,9 +278,9 @@ type ContainerProbeSpec struct {
 
 // GPUDirectStorageSpec defines the properties for NVIDIA GPUDirect Storage Driver deployment(Experimental)
 type GPUDirectStorageSpec struct {
-	// Enabled indicates if GPUDirect Storage is enabled through GPU operator
+	// Enabled indicates if GPUDirect Storage is enabled through GPU Operator
 	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors=true
-	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.displayName="Enable GPUDirect Storage through GPU operator"
+	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.displayName="Enable GPUDirect Storage through GPU Operator"
 	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.x-descriptors="urn:alm:descriptor:com.tectonic.ui:booleanSwitch"
 	Enabled *bool `json:"enabled,omitempty"`
 
@@ -325,9 +325,9 @@ type GPUDirectStorageSpec struct {
 
 // GPUDirectRDMASpec defines the properties for nvidia-peermem deployment
 type GPUDirectRDMASpec struct {
-	// Enabled indicates if GPUDirect RDMA is enabled through GPU operator
+	// Enabled indicates if GPUDirect RDMA is enabled through GPU Operator
 	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors=true
-	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.displayName="Enable GPUDirect RDMA through GPU operator"
+	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.displayName="Enable GPUDirect RDMA through GPU Operator"
 	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.x-descriptors="urn:alm:descriptor:com.tectonic.ui:booleanSwitch"
 	Enabled *bool `json:"enabled,omitempty"`
 	// UseHostMOFED indicates to use MOFED drivers directly installed on the host to enable GPUDirect RDMA
@@ -337,23 +337,23 @@ type GPUDirectRDMASpec struct {
 	UseHostMOFED *bool `json:"useHostMofed,omitempty"`
 }
 
-// GDRCopySpec defines the properties for NVIDIA GDRCopy driver deployment
+// GDRCopySpec defines the properties for NVIDIA GDRCopy driver (gdrdrv) deployment
 type GDRCopySpec struct {
-	// Enabled indicates if GDRCopy is enabled through GPU operator
+	// Enabled indicates if GDRCopy is enabled through GPU Operator
 	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors=true
-	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.displayName="Enable GDRCopy through GPU operator"
+	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.displayName="Enable GDRCopy through GPU Operator"
 	// +operator-sdk:gen-csv:customresourcedefinitions.specDescriptors.x-descriptors="urn:alm:descriptor:com.tectonic.ui:booleanSwitch"
 	Enabled *bool `json:"enabled,omitempty"`
 
-	// GDRCopy diver image repository
+	// NVIDIA GDRCopy driver image repository
 	// +kubebuilder:validation:Optional
 	Repository string `json:"repository,omitempty"`
 
-	// GDRCopy driver image name
+	// NVIDIA GDRCopy driver image name
 	// +kubebuilder:validation:Pattern=[a-zA-Z0-9\-]+
 	Image string `json:"image,omitempty"`
 
-	// GDRCopy driver image tag
+	// NVIDIA GDRCopy driver image tag
 	// +kubebuilder:validation:Optional
 	Version string `json:"version,omitempty"`
 
